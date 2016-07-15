@@ -1,6 +1,6 @@
-ca830e335a68cadc87ca37fcb7d28916 *DESCRIPTION
-0f6786cdfcd24261a7a05e83bd24780f *NAMESPACE
-48c6862f83905ecd56a5c45e81cd0f58 *R/humarray.R
+a7cc383f305ad4bb17b450a2f0643785 *DESCRIPTION
+3daf20ea6bd3cfacfb09dfea8860dd21 *NAMESPACE
+4a4238952046b8d634cd51cede0bb4e3 *R/humarray.R
 1c23f124368079ce53386f6b51c9a479 *R/humarray_datasets.R
 dfa8cc54e6dbdff5ef50555b708be261 *data/ImmunoChipB37.rda
 bd64c224db5db564d08bfea84d8d44a5 *data/datalist
@@ -38,7 +38,7 @@ b0293bcaa4883404682ca67d766a976f *man/chrIndices-methods.Rd
 e881a3cec47729b517a850eb31513ec2 *man/chrNames-methods.Rd
 3fc0c904c983bab9e2d6ae2c9e952b26 *man/chrNums.Rd
 8a9428b160d2f932109e119e85e82451 *man/chrSel-methods.Rd
-bbd3bad08818867c7360d797ad1ee1d3 *man/chrSelect.Rd
+9f29e64f11640fea6ceaba21ca3398ae *man/chrSelect.Rd
 a7e2e7bce66da3e19e87558077dc79ef *man/chrm-methods.Rd
 8a514d3728159dc14bc93b6116c0c00d *man/coerce-methods.Rd
 2822d1cb9836fc1094bb951bb5750c6e *man/coerce_--methods.Rd
@@ -69,8 +69,8 @@ b01474ad9881d7997fd8864d553a8280 *man/get.nearby.snp.lists.Rd
 505deccc8140d7ba3744cda641c53102 *man/get.t1d.regions.Rd
 511300b9a602c0faf531629394585f25 *man/get.t1d.subset.Rd
 2ca4732a14d376c6e388885791d148ad *man/get.telomere.locs.Rd
-bdb24f4ce2b9c841eba7a9c6751b96b0 *man/humarray-internal.Rd
-6cec99c800189c9c3268c4db55478a45 *man/humarray-package.Rd
+6872433732b6702c15bd264d9c5a891b *man/humarray-internal.Rd
+eaccbd26166ab5b9d0b4ebbb8f76fae3 *man/humarray-package.Rd
 9e57b4b88ea14b68e8fa8bd168774c3f *man/iChipRegionsB36.Rd
 c2831238ed007b691d429030309ccb7f *man/id.to.rs.Rd
 aa01623b6f9aef1dcf10afff3c5ca8a3 *man/ids.by.pos.Rd
@@ -99,5 +99,4 @@ d083b155a26f864ac9873be2bb94e0eb *man/set.chr.to.numeric.Rd
 ef7e24dea29b1d47463419a6a999c8c7 *man/showChipInfo.Rd
 b6ea46bd52b3d5edbf96035c49e89e5b *man/snps.in.range.Rd
 d44c9efa51b7e18dd2a7cf7aa60ae930 *man/startSnp.Rd
-29943d94d51b42d4e4f5e54aaa717e97 *man/toGenomeOrder-methods.Rd
 685d45842c4d68d25a45f116dc486ade *man/ucsc-methods.Rd

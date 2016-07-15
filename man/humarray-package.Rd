@@ -12,8 +12,8 @@ Utilises GRanges, data.frame or IRanges objects. Integrates gene annotation for 
 \tabular{ll}{
 Package: \tab humarray\cr
 Type: \tab humarray\cr
-Version: \tab 1.0.0\cr
-Date: \tab 2016-03-03\cr
+Version: \tab 1.0.2\cr
+Date: \tab 2016-07-12\cr
 License: \tab GPL (>= 2)\cr
 }
 This package helps to simplify common tasks in human genetics research, such as annotation lookup, conversion and labelling for GWAS analysis. Functions are provided that utilise GRanges, IRanges and data.frame (snpStats) objects for input and output. 

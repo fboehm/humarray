@@ -36,6 +36,10 @@
 \alias{chrInfo2}
 \alias{chrIndices2}
 \alias{chr2}
+\alias{chrInfoGS}
+\alias{chrIndicesGS}
+\alias{chrGS}
+\alias{chrPartitioning2}
 \alias{make.divisor}
 \alias{plotdf}
 \alias{chrnums.to.txt}

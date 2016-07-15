@@ -1,6 +1,7 @@
 ###NAMESPACE ADDITIONS###
+#' @import Rcpp NCmisc BiocGenerics 
 #' @importFrom BiocInstaller  biocVersion
-#' @importFrom stats family pnorm pt qnorm rchisq rnorm runif
+#' @importFrom stats family pnorm pt qnorm rchisq rnorm runif median cor sd
 #' @importFrom reader cat.path reader shift.rownames
 #' @importFrom grDevices dev.off pdf
 #' @importFrom graphics abline lines points rect text plot
@@ -8,31 +9,30 @@
 #' @importClassesFrom GenomicRanges GNCList GRanges GenomicRanges GenomicRangesORmissing
 #' @importFrom GenomicRanges GRanges GRangesList
 #' @importMethodsFrom GenomicRanges "names<-" length names start end 
-#' @importMethodsFrom GenomicRanges width strand mcols  "mcols<-" show findOverlaps subsetByOverlaps
-#' @importMethodsFrom GenomicRanges length names  "names<-" "dimnames<-" "["  "[<-"  "[["  "[[<-"  "$"  "$<-" cbind rbind
-#' @importMethodsFrom GenomeInfoDb "seqlevels"  "seqlevels<-" "genome<-" "genome"  seqinfo  "seqinfo<-" seqnames  "seqnames<-" 
+#' @importMethodsFrom GenomicRanges width strand  show findOverlaps
+#' @importMethodsFrom GenomicRanges length names  "names<-"  "["  "[<-"   "[[<-"  "$"  "$<-"
+#' @importMethodsFrom GenomeInfoDb "seqlevels"  "seqlevels<-" "genome<-" "genome"  seqinfo  "seqinfo<-" seqnames  "seqnames<-" "seqlengths"
 #' @importClassesFrom IRanges RangedData 
-#' @importFrom IRanges "%over%" IRanges  RangedData  showAsCell 
+#' @importFrom IRanges "%over%" IRanges  RangedData  showAsCell PartitioningByEnd
 #' @importMethodsFrom IRanges "colnames<-" "rownames<-" "universe<-" showAsCell
-#' @importMethodsFrom IRanges as.data.frame as.list as.matrix cbind rbind colnames elementLengths
+#' @importMethodsFrom IRanges as.data.frame as.list as.matrix cbind rbind colnames
 #' @importMethodsFrom IRanges end findOverlaps subsetByOverlaps gsub intersect lapply
-#' @importMethodsFrom IRanges mean nrow ncol order as.list subjectHits queryHits 
+#' @importMethodsFrom IRanges mean nrow ncol order as.list 
 #' @importMethodsFrom IRanges ranges rownames runLength space  flank  reduce resize
 #' @importMethodsFrom IRanges start universe unlist width  "start<-"  "width<-"  "end<-" ranges "ranges<-"
 #' @importFrom "GenomicFeatures" makeTxDbFromUCSC  exonsBy  transcriptsBy
 #' @importMethodsFrom "GenomicFeatures"  exonsBy  transcriptsBy  as.list
 #' @importClassesFrom "rtracklayer"  ChainFile
 #' @importMethodsFrom "rtracklayer"  liftOver  import.chain
-#' @importMethodsFrom "genoset"  genome "genome<-"
-#' @importFrom "genoset"  chr  chrIndices  chrInfo  chrNames  chrOrder   "chrNames<-"
-#' @importFrom "genoset"  "isGenomeOrder"  "locData"  "toGenomeOrder"  "locData<-"
 #' @importFrom "biomaRt"  useMart  useDataset  getBM
+#' @importClassesFrom S4Vectors DataFrame Rle Hits
+#' @importFrom S4Vectors subjectHits queryHits mcols "mcols<-" head tail DataFrame Rle runValue 
 #' @importClassesFrom "biomaRt"  Mart
 #' @importFrom parallel  mclapply
-#' @import Rcpp BiocGenerics NCmisc S4Vectors
 #' @importFrom utils capture.output download.file read.table write.table read.delim
-#' @importFrom stats median 
 #' @importFrom graphics par
+#' @importFrom "genoset"  chrIndices  chrInfo  chrNames   "chrNames<-"
+
 ###END NAMESPACE###
 
 #DataFrame
@@ -40,6 +40,13 @@
 #seqlevels<-
 #genome<-
 
+# , genoset (>= 1.16.2)   # took from DESCRIPTION file
+# importFrom "genoset"  chr  chrIndices  chrInfo  chrNames  chrOrder   "chrNames<-"
+# importFrom "genoset"  "isGenomeOrder"  "locData"   "locData<-"
+# importMethodsFrom GenomicRanges length names  "names<-" "dimnames<-" "["  "[<-"  "[["  "[[<-"  "$"  "$<-" cbind rbind  "mcols<-" mcols subsetByOverlaps
+# importMethodsFrom IRanges as.data.frame as.list as.matrix cbind rbind colnames elementLengths queryHits subjectHits
+# importMethodsFrom "genoset"  genome "genome<-"
+# importFrom "genoset"  "toGenomeOrder"
 # doNotimportFrom utils capture.output download.file read.table write.table head tail data  
 # dontimportClassesFrom "genoset" RangedDataOrGenomicRanges
 # importNoClassesFrom("GenomicRanges", GRanges)
@@ -429,8 +436,8 @@ TGORD <- function (ds, strict = TRUE) {
 # internal from genoset
 TGOGR <- function (ds, strict = TRUE) {
   if (strict == TRUE) {
-    if (!isTRUE(all.equal(chrOrder(seqlevels(ds)), seqlevels(ds)))) {
-      seqlevels(ds) = chrOrder(seqlevels(ds))
+    if (!isTRUE(all.equal(chrOrder2(seqlevels(ds)), seqlevels(ds)))) {
+      seqlevels(ds) = chrOrder2(seqlevels(ds))
     }
   }
   row.order = order(as.integer(seqnames(ds)), start(ds))
@@ -444,13 +451,13 @@ TGOGR <- function (ds, strict = TRUE) {
 
 # internal # iFunctions
 # version of toGenomeOrder() that is guaranteed to work for IRanges or GRanges
-toGenomeOrder2 <- function(X,...) {
-  requireNamespace("GenomicRanges"); requireNamespace("IRanges"); requireNamespace("genoset")
+toGenomeOrder2 <- function(X,...,strict=TRUE) {
+  requireNamespace("GenomicRanges"); requireNamespace("IRanges"); #requireNamespace("genoset")
   if(is(X)[1] %in% c("GRanges","RangedData","ChipInfo")) {
     if(is(X)[1]=="RangedData") {
-      return(TGORD(X))
+      return(TGORD(X,strict=strict))
     } else {
-      return(TGOGR(X))
+      return(TGOGR(X,strict=strict))
     }
   } else {
     typ <- is(X)[1]
@@ -474,10 +481,64 @@ chrInfo2 <- function(X) {
   } else {
     typ <- is(X)[1]
     if(!typ %in% c("GRanges","RangedData","ChipInfo")) { warning("unacceptable type '",typ,"' for chrInfo2(), failure likely") }
-    out <- chrInfo(as(X,"GRanges"))
+    out <- genoset::chrInfo(as(X,"GRanges"))
     return(out)
   }
 }
+
+#from genoset
+chrPartitioning2 <- function (object) 
+{
+    rle = Rle(seqnames(object))
+    ends = structure(cumsum(runLength(rle)), names = as.character(runValue(rle)))
+    return(PartitioningByEnd(ends))
+}
+
+#from genoset
+chrInfoGS  <- function (object) 
+{
+    if (is(object, "GenomicRanges") && !any(is.na(seqlengths(object)))) {
+        max.val = seqlengths(object)
+    }
+    else {
+        max.val = max(relist(end(object), chrPartitioning2(object)))
+    }
+    if (length(max.val) == 1) {
+        names(max.val) = chrNames2(object)
+    }
+    else {
+        max.val = max.val[chrOrder2(chrNames2(object))]
+    }
+    chr.info = matrix(ncol = 3, nrow = length(max.val), dimnames = list(names(max.val), 
+        c("start", "stop", "offset")))
+    chr.info[, "stop"] = cumsum(as.numeric(max.val))
+    chr.info[, "offset"] = c(0, chr.info[-nrow(chr.info), "stop"])
+    chr.info[, "start"] = chr.info[, "offset"] + 1
+    return(chr.info)
+}
+
+
+# from genoset
+chrIndicesGS <- function (object, chr = NULL) 
+{
+    partitions = chrPartitioning2(object)
+    chr.first = start(partitions)
+    chr.last = end(partitions)
+    chr.info = matrix(c(chr.first, chr.last, chr.first - 1), 
+        ncol = 3, nrow = length(chr.first), dimnames = list(names(partitions), 
+            c("first", "last", "offset")))
+    if (!is.null(chr)) {
+        if (!chr %in% rownames(chr.info)) {
+            stop("Must specify a valid chromosome name in chrIndices.\n")
+        }
+        return(seq.int(chr.info[chr, "first"], chr.info[chr, 
+            "last"]))
+    }
+    else {
+        return(chr.info)
+    }
+}
+
 
 #internal # iFunctions
 # version of chrIndices() that is guaranteed to work for IRanges or GRanges
@@ -488,28 +549,34 @@ chrIndices2 <- function(X,...) {
   } else {
     typ <- is(X)[1]
     if(!typ %in% c("GRanges","RangedData","ChipInfo")) { warning("unacceptable type '",typ,"' for chrIndices2(), failure likely") }
-    out <- chrIndices(as(X,"GRanges"))
+    out <- genoset::chrIndices(as(X,"GRanges"))
     return(out)
   }
 }
+
 
 #internal # iFunctions
 # version of chr() that is guaranteed to work for IRanges or GRanges
 chr2 <- function(X) {
   requireNamespace("GenomicRanges"); requireNamespace("IRanges")
   if(is(X)[1] %in% c("GRanges","ChipInfo")) {
-    return(genoset::chr(X))
+    return(chrGS(X))
   } else {
     if(is(X)[1]=="RangedData") {
       return(space(X))
     } else {
       if(is.null(X)) { warning("X was NULL, expecting RangedData/GRanges"); return(NULL) }
       warning("chr2() function applies only to RangedData objects, attempting to pass ",is(X)[1]," to chr()")
-      return(genoset::chr(X))
+      return(chrGS(X))
     }
   }
 }
 
+#from genoset
+chrGS <- function (object) 
+{
+    return(as.character(seqnames(object)))
+}
 
 
 #internal
@@ -1136,11 +1203,11 @@ setMethod("[[", "ChipInfo", function(x,i,j,...) {
   if (is.numeric(i) && !is.na(i) && (i < 1L || i > length(cn)))
     stop("subscript out of bounds")
   # do the selection #
-  if(i %in% paste(chr(x))) {
-    out <- x[chr(x)==i,]
+  if(i %in% paste(chrm(x))) {
+    out <- x[chrm(x)==i,]
   } else {
     if(is.numeric(i)) {
-      out <- x[match(chr(x),chrNames(x))==i,]
+      out <- x[match(chrm(x),chrNames(x))==i,]
     } else {
       stop("unknown index")
     }
@@ -1730,60 +1797,113 @@ setMethod("chrSel", "ChipInfo", function(object,chr) {
 setGeneric("chrm",function(object) standardGeneric("chrm"))
 
 #' @rdname chrm-methods
-#' @importMethodsFrom genoset  chr  
 #' @exportMethod chrm
 setMethod("chrm", "RangedData", function(object) {
   return(chr2(object))
 })
 
 #' @rdname chrm-methods
-#' @importMethodsFrom genoset  chr  
-#' @importFrom genoset  chr  
 #' @exportMethod chrm
 setMethod("chrm", "GRanges", function(object) {
-  return(genoset::chr(object))
+  return(chr2(object))
 })
 
 #' @rdname chrm-methods
-#' @importMethodsFrom genoset  chr  
-#' @importFrom genoset  chr  
 #' @exportMethod chrm
 setMethod("chrm", "ChipInfo", function(object) {
-  return(genoset::chr(object))
+  return(chr2(object))
 })
 
 
 
-#' @importMethodsFrom "genoset"  toGenomeOrder  
-#' @exportMethod toGenomeOrder
-setMethod("toGenomeOrder", "RangedData", function(ds) {
-  return(TGORD(ds))
-})
+# #' Genome order method for RangedData objects
+# #' 
+# #' Return the list of chromosome values from a RangedData object
+# #' @param strict for compatibility with genoset toGenomeOrder, recommend setting TRUE
+# #' @param object RangedData object
+# #' @return vector of chromosome values for each range/SNP
+# #' @rdname toGenomeOrder2-methods
+# #' @export
+# setGeneric("toGenomeOrder2",function(object,strict) standardGeneric("toGenomeOrder2"))
+
+# # importMethodsFrom "genoset"  toGenomeOrder  
+# #' @rdname toGenomeOrder2-methods
+# #' @exportMethod toGenomeOrder2
+# setMethod("toGenomeOrder2", "RangedData", function(object,strict) {
+  # return(TGORD(object))
+# })
+# #' @rdname toGenomeOrder2-methods
+# #' @exportMethod toGenomeOrder2
+# setMethod("toGenomeOrder2", "GRanges", function(object,strict) {
+  # return(TGOGR(object))
+# })
 
 
+# #' Chromosome indices method for ranged objects
+# #' 
+# #' Return the list of chromosome start and end indexes from a RangedData object
+# #' @param object RangedData or GRanges object
+# #' @return matrix of indexes, colnames  first, last, offset
+# #' @rdname chrIndices-methods
+# #' @export
+# setGeneric("chrIndices",function(object) standardGeneric("chrIndices"))
 
-#' @importMethodsFrom "genoset"   chrIndices  
+# #' @rdname chrIndices-methods
 #' @exportMethod chrIndices
 setMethod("chrIndices", "RangedData", function(object) {
   return(chrIndices2(object))
 })
 
+# #' @rdname chrIndices-methods
+# #' @exportMethod chrIndices
+# setMethod("chrIndices", "GRanges", function(object) {
+  # return(chrIndices2(object))
+# })
 
 
-#' @importMethodsFrom "genoset"   chrInfo 
+# #' Chromosome info method for ranged objects
+# #' 
+# #' Return the list of chromosome start and end ranges from a RangedData object
+# #' @param object RangedData or GRanges object
+# #' @return matrix of ranges, colnames start, stop, offset
+# #' @rdname chrInfo-methods
+# #' @export
+# setGeneric("chrInfo",function(object) standardGeneric("chrInfo"))
+
+# #' @rdname chrInfo-methods
 #' @exportMethod chrInfo
 setMethod("chrInfo", "RangedData", function(object) {
   return(chrInfo2(object))
 })
 
+# #' @rdname chrInfo-methods
+# #' @exportMethod chrInfo
+# setMethod("chrInfo", "GRanges", function(object) {
+  # return(chrInfo2(object))
+# })
 
 
+# #' Chromosome names method for ranged objects
+# #' 
+# #' Return the list of chromosome labels from a RangedData object
+# #' @param object RangedData or GRanges object
+# #' @return vector of names
+# #' @rdname chrNames-methods
+# #' @export
+# setGeneric("chrNames",function(object) standardGeneric("chrNames"))
 
-#' @importMethodsFrom "genoset"  chrNames  
+
+# #' @rdname chrNames-methods
 #' @exportMethod chrNames
 setMethod("chrNames", "RangedData", function(object) {
   return(chrNames2(object))
 })
+
+# #' @rdname chrNames-methods
+# #' @exportMethod chrNames
+# setMethod("chrNames", "GRanges", function(object) {
+  # return(chrNames2(object))
+# })
 
 
 #' Plot method for GRanges objects
@@ -2502,7 +2622,8 @@ get.cyto <- function(build=NULL,dir=NULL,bioC=TRUE,GRanges=TRUE,refresh=FALSE) {
 #' }
 get.recombination.map <- function(dir=NULL,verbose=TRUE,refresh=FALSE, compress=FALSE) {
   n.chr <- 22
-  hap.dir <- "http://hapmap.ncbi.nlm.nih.gov/downloads/recombination/latest/rates/"
+#  hap.dir <- "http://hapmap.ncbi.nlm.nih.gov/downloads/recombination/latest/rates/"  # deprecated
+  hap.dir <- "ftp://ftp.ncbi.nlm.nih.gov/hapmap/recombination/latest/rates/"
   temp.dir <- "recombinationratesGF13fDR1er119"
   local.file <- "rrates_genetic_map_chr_1_22_b36.RData"
   if(!file.exists(temp.dir)) { dir.create(temp.dir) } 
@@ -3504,7 +3625,7 @@ conv.36.37 <- function(ranges=NULL,chr=NULL,pos=NULL,...,ids=NULL,chain.file=NUL
     ranges <- makeGRanges(chr=chr,pos=pos,row.names=ids,...)
     orn <- ids
   } else {
-  	prv(ranges)
+  	#prv(ranges)
     if(is.null(rownames(ranges))) { rownames(ranges) <- paste0("rng",1:nrow(ranges)) }    
     orn <- rownames(ranges)
   }
@@ -4146,7 +4267,7 @@ df.to.ranged <- function(dat, ids=NULL,start="start",end="end",width=NULL,
 #' One of the main differences between RangedData and GRanges is the way
 #' of selecting the subset for a chromosome. RangedData just uses [n] where
 #' 'n' is the chromosome name or number. Whereas GRanges, does not have a
-#' method like this, so need to select using [chr(X)==chr.num,]
+#' method like this, so need to select using [chrm(X)==chr.num,]
 #' This wrapper allows selection of a chromosome or chromosomes regardless of
 #' whether the object is RangedData or GRanges type.
 #' @param X A GRanges or RangedData object
@@ -5744,7 +5865,7 @@ Chr <- function(ids,dir=NULL,snps.only=FALSE) {
     ic.ids <- clean.snp.ids(ids)
     all.support <- chip.support()
     if(!exists("all.support")) { stop("ChipInfo data object 'all.support' not found")  }  ## load object: all.support [snp support for whole chip]
-    outlist <- chr(all.support)[match(ic.ids,rownames(all.support))]
+    outlist <- chrm(all.support)[match(ic.ids,rownames(all.support))]
     return(outlist)
   }
   typ <- is(ids)[1]
@@ -6433,7 +6554,7 @@ snps.in.range <- function(chr, start=NA, end=start, ids=TRUE) {
   all.support <- chip.support()
   #if(!exists("work.dir")) { if(is.null(dir)) { work.dir <- getwd() } else { work.dir <- dir } }
  # if(!exists("all.support")) { all.support <- chip.support() }  ## load object: all.support [snp support for whole chip]
-  all.chr <- chr(all.support)
+  all.chr <- chrm(all.support)
   all.pos <- start(all.support)[all.chr %in% chr]
   if(length(all.pos)<1) { warning("no positions found for 'chr' specified"); return(NULL) }
   validz <- which(all.pos>=the.range[1] & all.pos<=the.range[2])
@@ -6485,7 +6606,7 @@ nearest.snp <- function(chr, pos, n=1, side=c("either","left","right"),ids=TRUE,
   if(!side %in% c("either","left","right")) {
     side <- "either"; warning("invalid side argument, defaulting to 'either'") }
   if(!is.null(limit)) { if(!is.numeric(limit)) { limit <- NULL; warning("invalid limit argument, defaulting to NULL") } }
-  all.chr <- chr(all.support)
+  all.chr <- chrm(all.support)
   all.pos <- start(all.support)[all.chr %in% chr]
   if(length(all.pos)<1) { warning("no positions found for 'chr' specified"); return(NULL) }
   difz <- pos-all.pos
@@ -6624,7 +6745,7 @@ get.nearby.snp.lists <- function(snpid.list,cM=0.1,bp.ext=0,excl.snps=NULL,name.
   pozz <- start(all.support)
   n.snps <- vector("list",length(st.window))
   for(cc in 1:length(st.window)) {
-    n.snps[[cc]] <- which(chr(all.support)==next.chr &
+    n.snps[[cc]] <- which(chrm(all.support)==next.chr &
                             pozz>=st.window[cc] & 
                             pozz<=en.window[cc] &
                             (!rownames(all.support) %in% excl.snps) &

@@ -25,7 +25,7 @@ subset specified.
 One of the main differences between RangedData and GRanges is the way
 of selecting the subset for a chromosome. RangedData just uses [n] where
 'n' is the chromosome name or number. Whereas GRanges, does not have a
-method like this, so need to select using [chr(X)==chr.num,]
+method like this, so need to select using [chrm(X)==chr.num,]
 This wrapper allows selection of a chromosome or chromosomes regardless of
 whether the object is RangedData or GRanges type.
 }
