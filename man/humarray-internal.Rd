@@ -1,6 +1,7 @@
 \name{humarray-internal}
 
 \alias{do.cw}
+\alias{immunobase.has.changed}
 \alias{.rownames3}
 \alias{makePrettyMatrixForCompactPrinting2}
 \alias{.makeNakedMatFromChipInfo}

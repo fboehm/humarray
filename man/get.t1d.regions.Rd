@@ -19,6 +19,7 @@ be used.}
 a GRanges object with the specified type 1 diabetes (or inverse) ranges
 }
 \description{
+Deprecated as this data is no longer available online
 This function uses a full list of ichip dense regions combined with a list of t1d
 SNPs to get the t1d regions. For type 1 diabetes researchers.
 }
