@@ -33,4 +33,3 @@ Cortes and Brown, Promise and pitfalls of the Immunochip (2011).
  \code{\link{get.t1d.regions}} \code{\link{get.immunobase.snps}}
 }
 \keyword{datasets}
-

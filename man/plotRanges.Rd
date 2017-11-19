@@ -85,4 +85,3 @@ rr3 <- rr; end(rr3) <- start(rr3)
 rownames(rr3) <- paste0("rs",sample(10^6,nrow(rr3)))
 plotRanges(rr3,col="blue",yaxt="n",ylab="",bty="n")
 }
-

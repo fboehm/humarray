@@ -6,10 +6,10 @@
 \alias{QCcode,ChipInfo-method}
 \alias{QCcode<-}
 \alias{QCcode<-,ChipInfo-method}
-\alias{QCfail}
-\alias{QCfail,ChipInfo-method}
 \alias{QCpass}
+\alias{QCfail}
 \alias{QCpass,ChipInfo-method}
+\alias{QCfail,ChipInfo-method}
 \title{Access quality control pass or fail codes for ChipInfo}
 \usage{
 QCcode(x)
@@ -60,4 +60,3 @@ control, according to the QCcodes() slot == 0.
 QCfail: Returns the subset of the ChipInfo object for which SNPs fail quality
 control, according to the QCcodes() slot > 0.
 }
-

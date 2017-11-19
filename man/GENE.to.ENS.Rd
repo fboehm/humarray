@@ -30,10 +30,9 @@ gene.ids <- c("MYC","PTPN2","IL2RA","APOE")
 GENE.to.ENS(gene.ids)
 }
 }
-\author{
-Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
-}
 \seealso{
 \code{\link{GENE.to.ENS}}, \code{\link{rs.to.id}}, \code{\link{id.to.rs}}; eg2sym, sym2eg from package 'gage'
 }
-
+\author{
+Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
+}

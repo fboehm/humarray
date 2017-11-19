@@ -27,4 +27,3 @@ official manifest. These will largely be the same as the rownames,
 but the rownames will always be valid R column names, converted from
 the original using clean.snp.ids() [internal function]
 }
-

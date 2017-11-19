@@ -1,8 +1,8 @@
 Package: humarray
 Type: Package
 Title: Simplify Analysis and Annotation of Human Microarray Datasets
-Version: 1.1
-Date: 2017-01-02
+Version: 1.2
+Date: 2017-11-17
 Author: Nicholas Cooper
 Maintainer: Nicholas Cooper <njcooper@gmx.co.uk>
 Depends: R (>= 3.2), NCmisc (>= 1.1.4), IRanges (>= 1.22.10),
@@ -16,6 +16,6 @@ LazyData: true
 License: GPL (>= 2)
 Collate: 'humarray.R' 'humarray_datasets.R'
 NeedsCompilation: no
-Packaged: 2017-01-09 00:09:58 UTC; ncooper
+Packaged: 2017-11-19 23:02:46 UTC; root
 Repository: CRAN
-Date/Publication: 2017-01-09 09:49:50
+Date/Publication: 2017-11-20 00:12:32 UTC

@@ -24,4 +24,3 @@ rs-ids: character vector of IDs (or NAs)
 Returns the rs-ids for the chip object, e.g, "rs689", etc
 Only if these are annotated internally, or else a vector of NAs
 }
-

@@ -47,4 +47,3 @@ nearest.snp(6,25000000,n=10,build=37,ids=FALSE,side="right") # only SNPs to the 
 \seealso{
 \code{\link{expand.nsnp}}, \code{\link{nearest.gene}}
 }
-

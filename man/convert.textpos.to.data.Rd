@@ -25,4 +25,3 @@ convert.textpos.to.data(txt)
 \seealso{
 \code{\link{ranged.to.txt}}
 }
-

@@ -59,15 +59,14 @@ getOption("chip.info") # shows the object is now saved in the tmp directory for 
 chip.support(build=38,refresh=TRUE)
 #}
 }
-\author{
-Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
-}
 \seealso{
 \code{\link{ChipInfo}}, \code{\link{build}}, \code{\link{rs.id}}, 
  \code{\link{QCfail}}, \code{\link{convTo36}}, 
  \code{\link{convTo37}}, \code{\link{A1}}, \code{\link{A2}}
 }
+\author{
+Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
+}
 \concept{
 ImmunoChip MetaboChip microarray iSelect Illumina
 }
-

@@ -2,6 +2,15 @@
 % Please edit documentation in R/humarray.R
 \name{as}
 \alias{as}
+\alias{as}
+\alias{as}
+\alias{as}
+\alias{as}
+\alias{as}
+\alias{as}
+\alias{as}
+\alias{as}
+\alias{as}
 \title{As("ChipInfo", "GRanges")}
 \description{
 As("ChipInfo", "GRanges")
@@ -26,4 +35,3 @@ Otherwise use 'ranged.to.data.frame()'
 
 As("GRanges", "data.frame")
 }
-

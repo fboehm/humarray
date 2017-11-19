@@ -22,11 +22,11 @@
 \alias{pduplicated}
 \alias{comma}
 \alias{order.chr}
-\alias{sort.chr}
+\alias{sort_chr}
 \alias{clean.snp.ids}
 \alias{hard.coded.conv}
 \alias{rmv.trail}
-\alias{plot.get.area}
+\alias{plot_get_area}
 \alias{add.trail}
 \alias{rsampid}
 \alias{rsnpid}

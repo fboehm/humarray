@@ -43,4 +43,3 @@ Quick and easy way to retrieve human chromosome lengths. Can select from hg18/hg
  get.chr.lens(build=35,autosomes=TRUE,delete.after=TRUE) # only for autosomes
  get.chr.lens(build="hg19",mito=TRUE,delete.after=TRUE) # include mitochondrial DNA length
 }
-

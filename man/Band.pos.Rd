@@ -58,11 +58,10 @@ Band.pos(Pos.band(c("13q21.31","1p13.2"),bioC=TRUE)) # use ranges object returne
 # note that 3 ranges are returned for each entry as the start/end overlap the adjacent ranges
 }
 }
-\author{
-Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
-}
 \seealso{
 \code{\link{Chr}}, \code{\link{Pos}}, \code{\link{Pos.band}}, \code{\link{Band}}, 
 \code{\link{Band.gene}}, \code{\link{Band.pos}}, \code{\link{Gene.pos}}
 }
-
+\author{
+Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
+}

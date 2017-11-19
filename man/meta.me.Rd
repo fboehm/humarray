@@ -71,4 +71,3 @@ meta.me(X,OR2="OR_CC2",SE2="SE_CC2")
 meta.me(X,OR2="OR_CC2",SE2="SE_CC2",N1="n1",N2="n2",method="sample.size") 
 meta.me(X,OR2="OR_CC2",SE2="SE_CC2",N1="n1",N2="n2",method="z.score")  # N's will be ignored
 }
-

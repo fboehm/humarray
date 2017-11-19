@@ -36,4 +36,3 @@ more.ranges <- rranges(10, chr.range=21:25)
 chrSelect(more.ranges,1:22) # gives warning
 select.autosomes(more.ranges)
 }
-

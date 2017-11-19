@@ -28,4 +28,3 @@ Pos(ids.by.pos(snp.ids))
 \seealso{
 \code{\link{rs.to.id}}, \code{\link{id.to.rs}}, \code{\link{Chr}}, \code{\link{Pos}}
 }
-

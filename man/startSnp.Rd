@@ -44,4 +44,3 @@ of the ranges.
 startSnp(chr=c(1:3),pos=cbind(c(100000,200000,300000),c(30000000,4000000,10000000)))
 startSnp(rranges())
 }
-

@@ -19,4 +19,3 @@ character string
 \description{
 Simply returns the name of the chip, e.g, 'ImmunoChip'
 }
-

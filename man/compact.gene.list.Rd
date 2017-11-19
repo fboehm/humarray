@@ -34,4 +34,3 @@ my.genes <- c("ERAP1","HLA-C;CTLA4;IFIH","INS;MYC","AGAP1;APOE;DRDB1;FUT2;HCP5;B
 compact.gene.list(my.genes)
 compact.gene.list(my.genes,n=2,others=TRUE)
 }
-

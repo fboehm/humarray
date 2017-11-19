@@ -4,10 +4,10 @@
 \name{A1}
 \alias{A1}
 \alias{A1,ChipInfo-method}
-\alias{A1<-}
-\alias{A1<-,ChipInfo-method}
 \alias{A2}
 \alias{A2,ChipInfo-method}
+\alias{A1<-}
+\alias{A1<-,ChipInfo-method}
 \alias{A2<-}
 \alias{A2<-,ChipInfo-method}
 \title{Access alleles for ChipInfo}
@@ -52,4 +52,3 @@ If using in conjunction with snpStats, remember that allele codes are
 always flipped to be alphabetical, so the reference allele is the later
 letter in the alphabet. Note, assignment to A2 needs to be done separately.
 }
-

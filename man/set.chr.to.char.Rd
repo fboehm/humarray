@@ -38,4 +38,3 @@ set.chr.to.char(x,do.x.y=FALSE) # 23=chr23, etc
 \seealso{
 \code{\link{set.chr.to.numeric}}
 }
-

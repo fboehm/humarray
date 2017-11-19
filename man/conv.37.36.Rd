@@ -52,11 +52,10 @@ rr <- as(gg,"RangedData")
 conv.37.36(rr) # note the result is same as GRanges, but in genome order
 }
 }
-\author{
-Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
-}
 \seealso{
 \code{\link{conv.36.37}}, \code{\link{conv.37.38}}, 
 \code{\link{conv.38.37}}, \code{\link{convTo37}}, \code{\link{convTo36}}
 }
-
+\author{
+Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
+}

@@ -49,4 +49,3 @@ file.on.disk <- "rrates_genetic_map_chr_1_22_b36.RData"
 if(file.exists(file.on.disk)) { unlink(file.on.disk) } # remove the downloaded file
 }
 }
-

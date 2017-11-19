@@ -29,4 +29,3 @@ SNPs to get the t1d regions. For type 1 diabetes researchers.
 # non.t1d <- get.t1d.regions(build=36,invert=TRUE)
 }
 }
-

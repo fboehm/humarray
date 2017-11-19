@@ -26,16 +26,16 @@ Retrieve human disease top GWAS hits from t1dbase in build hg19 coords (37).
 \examples{
 get.immunobase.snps(show.codes=TRUE) # show codes/diseases available to download
 \donttest{
-get.immunobase.snps(disease="CEL") # get SNP ids for celiac disease
-get.immunobase.snps(disease="AS") # get SNP ids for Ankylosing Spondylitis in build-37/hg19
-get.immunobase.snps(disease=27) # get SNP ids for Alopecia Areata
-get.immunobase.snps("Vitiligo")
+# Deprecated as this data is no longer available online
+# get.immunobase.snps(disease="CEL") # get SNP ids for celiac disease
+# get.immunobase.snps(disease="AS") # get SNP ids for Ankylosing Spondylitis in build-37/hg19
+# get.immunobase.snps(disease=27) # get SNP ids for Alopecia Areata
+# get.immunobase.snps("Vitiligo")
 }
-}
-\author{
-Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
 }
 \references{
 PMID: 20937630
 }
-
+\author{
+Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
+}

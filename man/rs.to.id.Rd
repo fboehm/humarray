@@ -44,10 +44,9 @@ test.ids <- c("rs61733845","rs2227313","rs11577783","rs3748816",
 rs.to.id(test.ids, multi.list=TRUE) # list with duplicates
 }
 }
-\author{
-Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
-}
 \seealso{
 \code{\link{id.to.rs}}, \code{\link{GENE.to.ENS}}, \code{\link{ENS.to.GENE}}
 }
-
+\author{
+Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
+}

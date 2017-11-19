@@ -58,11 +58,10 @@ ii <- Pos.gene(c("CTLA4","PTPN22"))
 Gene.pos(ii$chr,ii$start,ii$end,bioC=FALSE) # returns same genes inputted on line above
 }
 }
-\author{
-Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
-}
 \seealso{
 \code{\link{Chr}}, \code{\link{Pos}}, \code{\link{Pos.band}}, \code{\link{Band}}, 
 \code{\link{Band.gene}}, \code{\link{Band.pos}}, \code{\link{Gene.pos}}
 }
-
+\author{
+Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
+}

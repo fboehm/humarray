@@ -41,4 +41,3 @@ and autoimmune disesase researchers.
 # non.autoimmune <- get.t1d.subset(T1D.only=FALSE,build=36,invert=TRUE) # non-autoimmune regions
 }
 }
-

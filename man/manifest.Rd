@@ -29,10 +29,9 @@ of the chip.support() object, accessible using chipId()).
   manifest(test.ids)  # even when some are rs-id, still works
   data.frame(rs.id=test.ids,legal.id=rs.to.id(test.ids),manifest.id=manifest(test.ids))
 }
-\author{
-Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
-}
 \seealso{
 \code{\link{id.to.rs}}, \code{\link{GENE.to.ENS}}, \code{\link{ENS.to.GENE}}
 }
-
+\author{
+Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
+}

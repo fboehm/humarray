@@ -33,4 +33,3 @@ get.immunog.locs()
 get.immunog.locs(bioC=FALSE)
 get.immunog.locs(text=TRUE,build=37)
 }
-

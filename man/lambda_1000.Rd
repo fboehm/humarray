@@ -31,11 +31,10 @@ L1000_b <- lambda_1000(p.vec,30000,50000)
 plot(sort(p.vec),type="l") 
 L1000_a; L1000_b
 }
-\author{
-Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
-}
 \references{
 Freedman M.L., et al. Assessing the impact of population stratification
  on genetic association studies. Nat. Genet. 2004;36:388-393.
 }
-
+\author{
+Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
+}

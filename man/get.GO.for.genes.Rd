@@ -35,4 +35,3 @@ cellular component, or molecular description, depending on the parameters chosen
 get.GO.for.genes(c("CTLA4","PTPN2","PTPN22")) # biological terms (default)
 get.GO.for.genes(c("CTLA4","PTPN2","PTPN22"),cel=TRUE) # add cellular GO terms
 }
-

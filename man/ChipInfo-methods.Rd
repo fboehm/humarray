@@ -2,11 +2,11 @@
 % Please edit documentation in R/humarray.R
 \docType{methods}
 \name{rownames,ChipInfo-method}
+\alias{rownames,ChipInfo-method}
 \alias{dim,ChipInfo-method}
 \alias{length,ChipInfo-method}
-\alias{print,ChipInfo-method}
-\alias{rownames,ChipInfo-method}
 \alias{show,ChipInfo-method}
+\alias{print,ChipInfo-method}
 \title{rownames method for ChipInfo objects}
 \usage{
 \S4method{rownames}{ChipInfo}(x)
@@ -51,4 +51,3 @@ The key difference with 'print' instead of 'show' is that by default the paramet
 'up.to' is set to 50, so that any ChipInfo object (or subset) of less than or equal
 to 50 rows will be displayed in its entirety, rather than just the top/bottom 5 rows.
 }
-

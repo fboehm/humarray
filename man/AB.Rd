@@ -25,11 +25,10 @@ snp.ids <- c("rs3842724","rs9729550","rs1815606","rs114582555","rs1240708","rs66
 AB(snp.ids) 
 }
 }
-\author{
-Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
-}
 \seealso{
 \code{\link{Chr}}, \code{\link{Pos}}, \code{\link{Pos.band}}, \code{\link{Band}}, 
 \code{\link{Band.gene}}, \code{\link{Band.pos}}, \code{\link{Gene.pos}}
 }
-
+\author{
+Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
+}

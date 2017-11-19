@@ -41,4 +41,3 @@ lookup
 gg2 <- rranges(10)
 chrNums(gg2,table.in=lookup) # make chromosome numbers using same table as above
 }
-

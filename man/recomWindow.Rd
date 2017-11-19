@@ -54,10 +54,9 @@ recomWindow(rd) # now extended by the interval
 recomWindow(as(rd,"GRanges"),info=FALSE) # also works for GRanges
 }
 }
-\author{
-Chris Wallace and Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
-}
 \seealso{
 \code{\link{get.recombination.map}}, \code{\link{get.nearby.snp.lists}}, \code{\link{expand.nsnp}}
 }
-
+\author{
+Chris Wallace and Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
+}

@@ -40,4 +40,3 @@ rngs <- rranges()
 \seealso{
 \code{\link{nearest.snp}}, \code{\link{chip.support}}, \code{\link{recomWindow}}
 }
-

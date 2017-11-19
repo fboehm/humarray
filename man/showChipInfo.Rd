@@ -40,4 +40,3 @@ This is called by the default 'show' method for ChipInfo objects.
 \seealso{
 \code{\link{ChipInfo}}
 }
-

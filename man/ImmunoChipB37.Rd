@@ -24,4 +24,3 @@ data(ImmunoChipB37)
  \code{\link{A1}}
 }
 \keyword{datasets}
-

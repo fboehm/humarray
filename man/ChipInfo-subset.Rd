@@ -23,4 +23,3 @@ ChipInfo object for the subset of SNPs on chromosome i
 Returns the subset of the ChipInfo object for which SNPs are on
 the chromosome specified, by either number or character.
 }
-

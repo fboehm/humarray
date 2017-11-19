@@ -64,4 +64,3 @@ rs.id, and a quality control flag. The default display is tidier than GRanges, i
 nice coersion to and frame data.frame and subsetting by chromosome using [[n]] has been
 added, in addition to normal [i,j] indexing native to GRanges.
 }
-

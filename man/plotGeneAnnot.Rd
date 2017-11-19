@@ -81,4 +81,3 @@ plotRanges(rr3,col="blue",scl="mb",xlim=loc,xlab="Chr21 position (Mb)",ylab="")
 # NOW add UCSC hg18 GENE annotation to the plot #
 \donttest{ plotGeneAnnot(chr=21,pos=c(9.95,10.1),scl="mb",y.ofs=1,build=36) }
 }
-

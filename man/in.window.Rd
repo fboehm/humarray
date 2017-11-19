@@ -44,4 +44,3 @@ in.window(rr,chr=ciG,pos=posiG) # set with ANY overlap of iG
 in.window(rr,chr=ciG,pos=posiG,TRUE) # set with FULL overlap of iG
 in.window(rr,chr=6,pos=c(25,35),unit="mb") # look between 25 - 35 MB on chr6 [ie, MHC]
 }
-

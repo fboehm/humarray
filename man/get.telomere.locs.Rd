@@ -48,4 +48,3 @@ get.telomere.locs()
 get.telomere.locs(bioC=FALSE)
 get.telomere.locs(text=TRUE)
 }
-

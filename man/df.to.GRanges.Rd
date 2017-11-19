@@ -57,4 +57,3 @@ df.to.GRanges(df4,ids="id.col") # use column of 'dat' for rownames
 \seealso{
 \code{\link{ranged.to.data.frame}}, \code{\link{df.to.ranged}}
 }
-

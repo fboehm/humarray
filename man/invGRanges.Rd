@@ -36,4 +36,3 @@ invGRanges(X)
 invGRanges(X,pad.missing.autosomes=FALSE)
 }
 }
-

@@ -53,4 +53,3 @@ get.nearby.snp.lists(c("rs689","rs4909944"),cM=0.001,name.by.bands=FALSE)
 \code{\link{snps.in.range}}, \code{\link{get.recombination.map}}, 
 \code{\link{recomWindow}}, \code{\link{conv.37.36}}, \code{\link{conv.36.37}}, \code{\link{expand.nsnp}}
 }
-

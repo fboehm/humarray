@@ -47,11 +47,10 @@ g2 <- makeGRanges(chr=c(22,21,21),start=c(1,1,1),end=c(1000,10000,100000),
                                               row.names=c("1K","10K","100K"))
 g1 ; g2
 }
-\author{
-Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
-}
 \seealso{
 \code{\link{Chr}}, \code{\link{Pos}}, \code{\link{Pos.gene}}, \code{\link{Band}},
  \code{\link{Band.gene}}, \code{\link{Band.pos}}, \code{\link{Gene.pos}}, \code{zlink{df.to.GRanges}}
 }
-
+\author{
+Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
+}

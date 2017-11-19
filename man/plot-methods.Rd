@@ -2,12 +2,12 @@
 % Please edit documentation in R/humarray.R
 \docType{methods}
 \name{plot,GRanges,ANY-method}
+\alias{plot,GRanges,ANY-method}
 \alias{GRanges}
 \alias{GRanges-method}
+\alias{plot,RangedData,ANY-method}
 \alias{RangedData}
 \alias{RangedData-method}
-\alias{plot,GRanges,ANY-method}
-\alias{plot,RangedData,ANY-method}
 \title{Plot method for GRanges objects}
 \usage{
 \S4method{plot}{GRanges,ANY}(x, y, ...)
@@ -29,4 +29,3 @@ Plot method for RangedData objects
 \seealso{
 \code{\link{plotRanges}}
 }
-

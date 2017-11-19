@@ -25,4 +25,3 @@ rand.ranges <- rranges(chr.range=20:26)
 rand.ranges # should include some non-autosomes
 select.autosomes(rand.ranges) # only autosomes remain
 }
-

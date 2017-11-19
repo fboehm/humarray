@@ -48,4 +48,3 @@ set.chr.to.numeric(char, table.in=tab) # code using codes from 'tab'
 \seealso{
 \code{\link{set.chr.to.char}}
 }
-

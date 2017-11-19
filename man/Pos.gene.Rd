@@ -60,11 +60,10 @@ Pos.gene(c("CTLA4","OR2A1"),one.to.one=FALSE,build=38)
 Pos.gene("RNU2-1",one.to.one=FALSE,bioC=TRUE,build=38) # RNU2-1 is split over multiple ranges
 }
 }
-\author{
-Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
-}
 \seealso{
 \code{\link{Chr}}, \code{\link{Pos}}, \code{\link{Pos.band}}, \code{\link{Band}}, 
 \code{\link{Band.gene}}, \code{\link{Band.pos}}, \code{\link{Gene.pos}}
 }
-
+\author{
+Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
+}

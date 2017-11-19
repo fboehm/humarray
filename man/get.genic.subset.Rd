@@ -36,4 +36,3 @@ where no explicit ref parameter is required.
 \seealso{
 \code{\link{get.gene.annot}}, \code{\link{get.exon.annot}}, \code{\link{subsetByOverlaps}}
 }
-

@@ -70,4 +70,3 @@ setwd(tempdir())
 get.gene.annot()
 }
 }
-

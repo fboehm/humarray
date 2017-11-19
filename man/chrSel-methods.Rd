@@ -3,9 +3,9 @@
 \docType{methods}
 \name{chrSel}
 \alias{chrSel}
-\alias{chrSel,ChipInfo-method}
-\alias{chrSel,GRanges-method}
 \alias{chrSel,RangedData-method}
+\alias{chrSel,GRanges-method}
+\alias{chrSel,ChipInfo-method}
 \title{Select chromosome subset for ranged objects}
 \usage{
 chrSel(object, chr)
@@ -33,4 +33,3 @@ Returns the object filtered for specific chromosomes for a GRanges object
 
 Returns the object filtered for specific chromosomes for a GRanges object
 }
-

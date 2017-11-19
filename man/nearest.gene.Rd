@@ -50,4 +50,3 @@ nearest.gene(6,25000000,n=10,build=37,ids=FALSE,side="right") # only genes to th
 \seealso{
 \code{\link{expand.nsnp}}, \code{\link{nearest.snp}}, \code{\link{get.gene.annot}}
 }
-

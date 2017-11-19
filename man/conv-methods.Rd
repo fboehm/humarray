@@ -2,12 +2,15 @@
 % Please edit documentation in R/humarray.R
 \docType{methods}
 \name{convTo37}
-\alias{convTo36}
-\alias{convTo36,ChipInfo-method}
 \alias{convTo37}
 \alias{convTo37,ChipInfo-method}
+\alias{convTo37}
+\alias{convTo36}
+\alias{convTo36,ChipInfo-method}
+\alias{convTo36}
 \alias{convTo38}
 \alias{convTo38,ChipInfo-method}
+\alias{convTo38}
 \title{Convert ChipInfo between build 36/37/38 coordinates}
 \usage{
 convTo37(x)
@@ -41,4 +44,3 @@ are already build 37/hg19, but ucsc(x)!="hg19" (incorrect value), then
 these coordinates will be transformed in a relative manner rendering the
 result meaningless.
 }
-

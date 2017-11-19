@@ -3,9 +3,9 @@
 \docType{methods}
 \name{chrm}
 \alias{chrm}
-\alias{chrm,ChipInfo-method}
-\alias{chrm,GRanges-method}
 \alias{chrm,RangedData-method}
+\alias{chrm,GRanges-method}
+\alias{chrm,ChipInfo-method}
 \title{Chromosome method for RangedData objects}
 \usage{
 chrm(object)
@@ -25,4 +25,3 @@ vector of chromosome values for each range/SNP
 \description{
 Return the list of chromosome values from a RangedData object
 }
-

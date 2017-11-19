@@ -1,39 +1,39 @@
 ###NAMESPACE ADDITIONS###
-#' @import Rcpp NCmisc 
-#' @importFrom BiocInstaller biocVersion
-#' @importFrom stats family pnorm pt qnorm rchisq rnorm runif median cor sd
-#' @importFrom reader cat.path reader shift.rownames
-#' @importFrom grDevices dev.off pdf
-#' @importFrom graphics abline lines points rect text plot
-#' @importFrom methods as callNextMethod is new prototype representation setAs setClass setGeneric setMethod setValidity
-#' @importClassesFrom GenomicRanges GNCList GRanges GenomicRanges GenomicRangesORmissing
-#' @importFrom GenomicRanges GRanges GRangesList
-#' @importMethodsFrom GenomicRanges "names<-" length names start end 
-#' @importMethodsFrom GenomicRanges width strand  show findOverlaps
-#' @importMethodsFrom GenomicRanges length names  "names<-"  "["  "[<-"   "[[<-"  "$"  "$<-"
-#' @importMethodsFrom GenomeInfoDb "seqlevels"  "seqlevels<-" "genome<-" "genome"  seqinfo  "seqinfo<-" seqnames  "seqnames<-" "seqlengths"
-#' @importClassesFrom IRanges RangedData 
-#' @importFrom IRanges "%over%" IRanges  RangedData  showAsCell PartitioningByEnd
-#' @importMethodsFrom IRanges "colnames<-" "rownames<-" "universe<-" showAsCell
-#' @importMethodsFrom IRanges as.data.frame as.list as.matrix cbind rbind colnames
-#' @importMethodsFrom IRanges end findOverlaps subsetByOverlaps gsub intersect lapply
-#' @importMethodsFrom IRanges mean nrow ncol order as.list 
-#' @importMethodsFrom IRanges ranges rownames runLength space  flank  reduce resize
-#' @importMethodsFrom IRanges start universe unlist width  "start<-"  "width<-"  "end<-" ranges "ranges<-"
-#' @importFrom "GenomicFeatures" makeTxDbFromUCSC  exonsBy  transcriptsBy
-#' @importMethodsFrom "GenomicFeatures"  exonsBy  transcriptsBy  as.list
-#' @importClassesFrom "rtracklayer"  ChainFile
-#' @importMethodsFrom "rtracklayer"  liftOver  import.chain
-#' @importFrom "biomaRt"  useMart  useDataset  getBM
-#' @importClassesFrom S4Vectors DataFrame Rle Hits
-#' @importFrom S4Vectors subjectHits queryHits mcols "mcols<-" head tail DataFrame Rle runValue 
-#' @importClassesFrom "biomaRt"  Mart
-#' @importFrom parallel  mclapply
-#' @importFrom utils capture.output download.file read.table write.table read.delim
-#' @importFrom graphics par
-#' @importFrom "genoset"  chrIndices  chrInfo  chrNames   "chrNames<-"
-#' @importFrom methods slot "slot<-"
-#' @importFrom BiocGenerics relist
+# import(Rcpp, NCmisc)
+# importFrom(BiocInstaller, biocVersion)
+# importFrom(stats, family, pnorm, pt, qnorm, rchisq, rnorm, runif, median, cor, sd)
+# importFrom(reader, cat.path, reader, shift.rownames )
+# importFrom(grDevices, dev.off, pdf)
+# importFrom(graphics, abline, lines, points, rect, text, plot)
+# importFrom(methods, as, callNextMethod, is, new, prototype, representation, setAs, setClass, setGeneric, setMethod, setValidity)
+# importClassesFrom(GenomicRanges, GNCList, GRanges, GenomicRanges)
+# importFrom(GenomicRanges, GRanges, GRangesList)
+# importMethodsFrom(GenomicRanges, "names<-", length, names, start, end)
+# importMethodsFrom(GenomicRanges, width, strand, show, findOverlaps)
+# importMethodsFrom("GenomicRanges", "length", "names", "names<-", "[", "[<-", "[[<-", "$", "$<-")
+# importMethodsFrom(GenomeInfoDb, "seqlevels", "seqlevels<-", "genome<-", "genome", seqinfo, "seqinfo<-", seqnames, "seqnames<-", "seqlengths")
+# importClassesFrom(IRanges, RangedData)
+# importFrom(IRanges, "%over%", IRanges, RangedData, showAsCell, PartitioningByEnd)
+# importMethodsFrom(IRanges, "colnames<-", "rownames<-", "universe<-", showAsCell)
+# importMethodsFrom(IRanges, as.data.frame, as.list, as.matrix, cbind, rbind, colnames)
+# importMethodsFrom(IRanges, end, findOverlaps, subsetByOverlaps, gsub, intersect, lapply)
+# importMethodsFrom(IRanges, mean, nrow, ncol, order, as.list)
+# importMethodsFrom(IRanges, ranges, rownames, runLength, space, flank, reduce, resize)
+# importMethodsFrom(IRanges, start, universe, unlist, width, "start<-", "width<-", "end<-", ranges, "ranges<-")
+# importFrom("GenomicFeatures", makeTxDbFromUCSC, exonsBy, transcriptsBy)
+# importMethodsFrom("GenomicFeatures", exonsBy, transcriptsBy, as.list)
+# importClassesFrom("rtracklayer", ChainFile)
+# importMethodsFrom("rtracklayer", liftOver, import.chain)
+# importFrom("biomaRt", useMart, useDataset, getBM)
+# importClassesFrom(S4Vectors, DataFrame, Rle, Hits)
+# importFrom(S4Vectors, subjectHits, queryHits, mcols, "mcols<-", head, tail, DataFrame, Rle, runValue)
+# importClassesFrom("biomaRt", Mart)
+# importFrom(parallel, mclapply)
+# importFrom(utils, capture.output, download.file, read.table, write.table, read.delim)
+# importFrom(graphics, par)
+# importFrom("genoset", chrIndices, chrInfo, chrNames, "chrNames<-")
+# importFrom(methods, slot, "slot<-")
+# importFrom(BiocGenerics, relist)
 ###END NAMESPACE###
 
 #DataFrame
@@ -43,6 +43,7 @@
 # BiocGenerics 
 
 # , genoset (>= 1.16.2)   # took from DESCRIPTION file
+# importClassesFrom(GenomicRanges, GNCList, GRanges, GenomicRanges, GenomicRanges_OR_missing)
 # importFrom "genoset"  chr  chrIndices  chrInfo  chrNames  chrOrder   "chrNames<-"
 # importFrom "genoset"  "isGenomeOrder"  "locData"   "locData<-"
 # importMethodsFrom GenomicRanges length names  "names<-" "dimnames<-" "["  "[<-"  "[["  "[[<-"  "$"  "$<-" cbind rbind  "mcols<-" mcols subsetByOverlaps
@@ -59,7 +60,7 @@
 # importNoClassesFrom "GenomicFeatures" TranscriptDb
 
 .onAttach <- function(libname, pkgname) {
-  packageStartupMessage("humarray version 1.1\n")
+  packageStartupMessage("humarray version 1.2\n")
 }
 
 .onLoad <- function(libname, pkgname) {
@@ -251,7 +252,7 @@ order.chr <- function(chrs) {
 }
 
 #internal
-sort.chr <- function(chr) { chr[order.chr(chr)] }
+sort_chr <- function(chr) { chr[order.chr(chr)] }
 
 
 #internal
@@ -617,7 +618,7 @@ cat("wrote plot to",cat.path(getwd(),fn),"\n")
 
 
 # gets limits of a plot space on current device
-plot.get.area <- function() {
+plot_get_area <- function() {
   success <- tryCatch(mine <- par("usr"),error=function(e) { F } )
   if(all(!success)) { warning("could not get plot limits - no plot open perhaps?"); return(NULL) }
   xlim=mine[1:2]
@@ -866,6 +867,9 @@ setClass("ChipInfo",
 #' @rdname GRanges-methods
 #' @exportMethod rownames
 setMethod("rownames", "GRanges", function(x) names(x@ranges))
+#' @rdname GRanges-methods
+#' @exportMethod "rownames<-"
+#' @param value a character string
 setMethod("rownames<-", "GRanges", function(x,value) { names(x@ranges) <- value; return(x) })
 
 
@@ -1677,7 +1681,14 @@ extraColumnSlots2 <- function(x) {
 #internal
 setGeneric("extraColumnSlotNames2",
            function(x) standardGeneric("extraColumnSlotNames2"))
-
+           
+#' Get extra column slot names
+#' 
+#' Return the list of chromosome start and end indexes from a RangedData object
+#' @param x any object
+#' @return internal function
+#' @rdname extraColumnSlotNames2-methods
+#' @exportMethod extraColumnSlotNames2
 setMethod("extraColumnSlotNames2", "ANY", function(x) character())
 
 
@@ -1857,15 +1868,14 @@ setMethod("chrm", "ChipInfo", function(object) {
 # })
 
 
-# #' Chromosome indices method for ranged objects
-# #' 
-# #' Return the list of chromosome start and end indexes from a RangedData object
-# #' @param object RangedData or GRanges object
-# #' @return matrix of indexes, colnames  first, last, offset
-# #' @rdname chrIndices-methods
+#' Chromosome indices method for ranged objects
+#' 
+#' Return the list of chromosome start and end indexes from a RangedData object
+#' @param object RangedData or GRanges object
+#' @return matrix of indexes, colnames  first, last, offset
+#' @rdname chrIndices-methods
 # #' @export
 # setGeneric("chrIndices",function(object) standardGeneric("chrIndices"))
-
 # #' @rdname chrIndices-methods
 #' @exportMethod chrIndices
 setMethod("chrIndices", "RangedData", function(object) {
@@ -1879,15 +1889,14 @@ setMethod("chrIndices", "RangedData", function(object) {
 # })
 
 
-# #' Chromosome info method for ranged objects
-# #' 
-# #' Return the list of chromosome start and end ranges from a RangedData object
-# #' @param object RangedData or GRanges object
-# #' @return matrix of ranges, colnames start, stop, offset
-# #' @rdname chrInfo-methods
+#' Chromosome info method for ranged objects
+#' 
+#' Return the list of chromosome start and end ranges from a RangedData object
+#' @param object RangedData or GRanges object
+#' @return matrix of ranges, colnames start, stop, offset
+#' @rdname chrInfo-methods
 # #' @export
 # setGeneric("chrInfo",function(object) standardGeneric("chrInfo"))
-
 # #' @rdname chrInfo-methods
 #' @exportMethod chrInfo
 setMethod("chrInfo", "RangedData", function(object) {
@@ -1901,16 +1910,14 @@ setMethod("chrInfo", "RangedData", function(object) {
 # })
 
 
-# #' Chromosome names method for ranged objects
-# #' 
-# #' Return the list of chromosome labels from a RangedData object
-# #' @param object RangedData or GRanges object
-# #' @return vector of names
-# #' @rdname chrNames-methods
+#' Chromosome names method for ranged objects
+#' 
+#' Return the list of chromosome labels from a RangedData object
+#' @param object RangedData or GRanges object
+#' @return vector of names
+#' @rdname chrNames-methods
 # #' @export
 # setGeneric("chrNames",function(object) standardGeneric("chrNames"))
-
-
 # #' @rdname chrNames-methods
 #' @exportMethod chrNames
 setMethod("chrNames", "RangedData", function(object) {
@@ -1974,10 +1981,11 @@ setMethod("plot", "RangedData", function(x,y,...) {
 #' @examples
 #' get.immunobase.snps(show.codes=TRUE) # show codes/diseases available to download
 #' \donttest{
-#' get.immunobase.snps(disease="CEL") # get SNP ids for celiac disease
-#' get.immunobase.snps(disease="AS") # get SNP ids for Ankylosing Spondylitis in build-37/hg19
-#' get.immunobase.snps(disease=27) # get SNP ids for Alopecia Areata
-#' get.immunobase.snps("Vitiligo")
+#' # Deprecated as this data is no longer available online
+#' # get.immunobase.snps(disease="CEL") # get SNP ids for celiac disease
+#' # get.immunobase.snps(disease="AS") # get SNP ids for Ankylosing Spondylitis in build-37/hg19
+#' # get.immunobase.snps(disease=27) # get SNP ids for Alopecia Areata
+#' # get.immunobase.snps("Vitiligo")
 #' }
 get.immunobase.snps <- function(disease="T1D",snps.only=TRUE,show.codes=FALSE) {
   disease.codes <- c("Type 1 Diabetes", "Crohns Disease","Rheumatoid Arthritis",
@@ -2354,7 +2362,7 @@ plotGeneAnnot <- function(chr=1, scl=c("b","kb","mb","gb"), y.ofs=0, width=NA, t
   Col <- c("green", "darkgreen")
 
   # get set of genes in range of the graph section + remove duplicate genes/exons
-  plot.area <- plot.get.area();
+  plot.area <- plot_get_area();
   if(all(is.null(plot.area))) { pos <- c(1,Inf) } 
   x.lim <- plot.area$xlim;
   y.lim <- plot.area$ylim;
@@ -2457,7 +2465,7 @@ get.immunog.locs <- function(build=NULL,bioC=TRUE,text=FALSE,GRanges=TRUE) {
   if(bioC | text) {
     #must.use.package(c("genoset","IRanges"),bioC=T)
     outData <- RangedData(ranges=IRanges(start=stz,end=enz,names=nmz),space=chr,
-                          reg=reg.dat,universe=build[1])
+                          reg=reg.dat)  #,universe=build[1])
     outData <- toGenomeOrder2(outData,strict=T)
     if(text) { outData <- ranged.to.txt(outData) } else {
       if(GRanges) { outData <- as(outData,"GRanges") }
@@ -2526,7 +2534,7 @@ get.centromere.locs <- function(dir=NULL,build=NULL,
   if(bioC | text) {
     #must.use.package(c("genoset","IRanges"),bioC=TRUE)
     outData <- RangedData(ranges=IRanges(start=stz,end=enz,names=nmz),space=gsub("chr","",chrn),
-                          reg=reg.dat,universe=build[1])
+                          reg=reg.dat) #,universe=build[1])
     outData <- toGenomeOrder2(outData,strict=TRUE)
     if(text) { 
       outData <- ranged.to.txt(outData) 
@@ -2595,7 +2603,7 @@ get.cyto <- function(build=NULL,dir=NULL,bioC=TRUE,GRanges=TRUE,refresh=FALSE) {
     en <- as.numeric(tt$end)
    # must.use.package(c("genoset","IRanges"),bioC=T)
     outData <- RangedData(ranges=IRanges(start=st,end=en,names=fullbands),space=mychr,
-                          negpos=tt$negpos,universe=build[1])
+                          negpos=tt$negpos) #,universe=build[1])
     #prv(outData)
     outData <- toGenomeOrder2(outData) ##,strict=T)
     if(GRanges) { outData <- as(outData,"GRanges") }
@@ -2777,7 +2785,7 @@ get.exon.annot <- function(dir=NULL,build=NULL,bioC=T, transcripts=FALSE, GRange
     if(bioC) {
       tS <- RangedData(ranges=IRanges(start=tS$start,end=tS$end),
                        space=tS$chr,gene=tS$gene, strand=tS$strand,
-                       txid=tS$txid, txname=tS$txname,universe=build)
+                       txid=tS$txid, txname=tS$txname) #,universe=build)
       tS <- toGenomeOrder2(tS,strict=T)
       if(GRanges) { tS <- as(tS,"GRanges") }
     }
@@ -2943,7 +2951,7 @@ get.gene.annot <- function(dir=NULL,build=NULL,bioC=TRUE,duplicate.report=FALSE,
 #    for (jj in 1:22) { ii <- ga[ga$chr==jj,"end"]>get.chr.lens()[jj]; if(any(ii)) { bad1s <- c(bad1s,which(ga$chr==jj)[ii]) } }
 #    if(length(bad1s)>0) { dat <- dat[-bad1s,] ; warning(length(bad1s)," gene positions exceeded chromosome length") }
     outData <- RangedData(ranges=IRanges(start=dat$start_position,end=dat$end_position),
-                          space=dat$chromosome_name,gene=dat$hgnc_symbol, band=dat$band, universe=build)
+                          space=dat$chromosome_name,gene=dat$hgnc_symbol, band=dat$band) #, universe=build)
     outData <- toGenomeOrder2(outData,strict=T)
     if(duplicate.report | one.to.one) {
       genez <- outData$gene
@@ -3047,7 +3055,7 @@ get.telomere.locs <- function(dir=NULL,kb=10,build=NULL,bioC=TRUE,GRanges=TRUE,
   if(bioC | text) {
     #must.use.package(c("genoset","IRanges"),bioC=T)
     outData <- RangedData(ranges=IRanges(start=stz,end=enz,names=nmz),space=chrz,
-                          reg=reg.dat,universe=build[1])
+                          reg=reg.dat) #,universe=build[1])
     outData <- toGenomeOrder2(outData,strict=T)
     if(text) { outData <- ranged.to.txt(outData) } else { if(GRanges) { outData <- as(outData,"GRanges") } }
   } else {
@@ -4156,7 +4164,7 @@ df.to.GRanges <- function(dat,...) {
 #' @param exclude character string, and column names from the data.frame to 
 #' NOT include in the resulting S4 object.
 #' @param build the ucsc build for the result object which will apply to the
-#' 'universe' (RangedData) or 'genome' slot (GRanges) of the new object.
+#' 'universe' (RangedData, deprecating) or 'genome' slot (GRanges) of the new object.
 #' @param GRanges logical, whether the resulting object should be GRanges (TRUE),
 #' or RangedData (FALSE)
 #' @param fill.missing logical, GRanges/RangedData objects cannot handle missing
@@ -6351,7 +6359,7 @@ Gene.pos <- function(chr=NA,pos=NA,start=NA,end=NA,ranges=NULL,build=NULL,dir=NU
     }
     #if(any(tolower(substr(chr,1,3))!="chr")) { chr <- gsub("chr",chr,sep="") }
     #chr <- gsub("chrchr","chr",chr)
-    testData <- RangedData(ranges=IRanges(start=Pos[,1],end=Pos[,2]),space=chr,index=1:length(chr),universe=build[1])
+    testData <- RangedData(ranges=IRanges(start=Pos[,1],end=Pos[,2]),space=chr,index=1:length(chr)) #,universe=build[1])
     testData <- toGenomeOrder2(testData,strict=T)
   } else {
     testData <- ranges # set.chr.to.char(ranges)
@@ -6461,7 +6469,7 @@ Band.pos <- function(chr=NA,pos=NA,start=NA,end=NA,ranges=NULL,build=NULL,dir=NU
     }
     #if(any(tolower(substr(chr,1,3))!="chr")) { chr <- gsub("chr",chr,sep="") }
     #chr <- gsub("chrchr","chr",chr)
-    testData <- RangedData(ranges=IRanges(start=Pos[,1],end=Pos[,2]),space=chr,index=1:length(chr),universe=build[1])
+    testData <- RangedData(ranges=IRanges(start=Pos[,1],end=Pos[,2]),space=chr,index=1:length(chr)) #,universe=build[1])
     testData <- toGenomeOrder2(testData,strict=T)
   } else {
     if(typ=="GRanges") { ranges <- as(ranges,"RangedData") }

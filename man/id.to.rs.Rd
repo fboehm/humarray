@@ -22,10 +22,9 @@ from build37.
 \examples{
 id.to.rs(c("imm_11_2138800","rs9467354","vh_1_1108138")) # middle one is already a rs.id
 }
-\author{
-Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
-}
 \seealso{
 \code{\link{rs.to.id}}, \code{\link{GENE.to.ENS}}, \code{\link{ENS.to.GENE}}
 }
-
+\author{
+Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
+}

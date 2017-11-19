@@ -19,4 +19,3 @@ character, 'hg18', 'hg19', or 'hg38'
 \description{
 Returns the UCSC build of the chip object, e.g, 'hg18', 'hg19', or 'hg38'
 }
-

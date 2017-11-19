@@ -66,4 +66,3 @@ print(tt/sum(tt)) # shows frequencies at which the chr's were sampled
 tt <- table(chrm(rranges(1000,equal.prob=TRUE)))
 print(tt/sum(tt)) # shows frequencies at which the chr's were sampled
 }
-

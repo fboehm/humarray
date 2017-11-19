@@ -40,7 +40,7 @@ detected automatically even when chr='chr'. Not case sensitive.}
 NOT include in the resulting S4 object.}
 
 \item{build}{the ucsc build for the result object which will apply to the
-'universe' (RangedData) or 'genome' slot (GRanges) of the new object.}
+'universe' (RangedData, deprecating) or 'genome' slot (GRanges) of the new object.}
 
 \item{GRanges}{logical, whether the resulting object should be GRanges (TRUE),
 or RangedData (FALSE)}
@@ -95,4 +95,3 @@ df.to.GRanges(df4,ids="id.col") # use column of 'dat' for rownames
 \seealso{
 \code{\link{ranged.to.data.frame}}, \code{\link{df.to.ranged}}
 }
-

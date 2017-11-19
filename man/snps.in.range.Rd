@@ -35,4 +35,3 @@ snps.in.range(1,9000000,10000000)
 snps.in.range(10,19000000,20000000,ids=TRUE)
 snps.in.range(10,19000000,20000000,ids=FALSE) # return positions instead of rs-ids
 }
-

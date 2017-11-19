@@ -36,4 +36,3 @@ For given genome ranges (GRanges/RangedData) will try to find the closest snps t
 endSnp(chr=c(1:3),pos=cbind(c(100000,200000,300000),c(30000000,4000000,10000000)))
 endSnp(rranges())
 }
-

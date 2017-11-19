@@ -40,4 +40,3 @@ get.centromere.locs()
 get.centromere.locs(bioC=FALSE,autosomes=TRUE)
 get.centromere.locs(text=TRUE)
 }
-

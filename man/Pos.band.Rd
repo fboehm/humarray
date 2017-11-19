@@ -40,11 +40,10 @@ Pos.band("Yq11.221",build=36)
 Pos.band("Yq11.221",build=37)
 Pos.band(c("13q21.31","1p13.2","2q33.2","6p23"),bioC=TRUE)
 }
-\author{
-Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
-}
 \seealso{
 \code{\link{Chr}}, \code{\link{Pos}}, \code{\link{Pos.gene}}, \code{\link{Band}}, 
 \code{\link{Band.gene}}, \code{\link{Band.pos}}, \code{\link{Gene.pos}}
 }
-
+\author{
+Nicholas Cooper \email{nick.cooper@cimr.cam.ac.uk}
+}

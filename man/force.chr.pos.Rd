@@ -34,4 +34,3 @@ force.chr.pos(pss,ch) # won't allow negative
 pss[1] <- 645035012
 force.chr.pos(pss,ch) # won't allow pos > chromosome length
 }
-

@@ -50,7 +50,7 @@ Use the 'ChipInfo()' wrapper to construct ChipInfo objects from scratch
  A1, A2, QCcode and rs.id.}
  }
 }
+
 \author{
 Nick Cooper
 }
-

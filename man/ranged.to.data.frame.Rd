@@ -40,4 +40,3 @@ df.to.GRanges(ranged.to.data.frame(rd,TRUE)) # inverse returns original
 \seealso{
 \code{\link{df.to.ranged}}, \code{\link{df.to.GRanges}}
 }
-

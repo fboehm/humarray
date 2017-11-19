@@ -25,4 +25,3 @@ ranged.to.txt(rranges())
 \seealso{
 \code{\link{convert.textpos.to.data}}
 }
-
